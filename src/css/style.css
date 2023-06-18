@@ -1,0 +1,60 @@
+body{
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+
+}
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper-select{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+} 
+
+
+.cat-info{
+  padding: 30px;
+  padding-top:0px;
+  width: 80vw;
+}
+
+
+.error{
+    width: 100%;
+}
+
+.is-hidden{
+    display: none;
+}
+
+/* loader css */
+.loader {
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    animation: smokeOut 1s ease-in-out infinite alternate;
+    text-shadow: 0 0 1px white;
+
+    margin-top: 40px;
+}
+
+.loader:before {
+    content: "Loading data, please wait...";
+}
+
+@keyframes smokeOut {
+    100% {
+        opacity: 0.08;
+        filter: blur(5px);
+        letter-spacing: 4px;
+    }
+}
