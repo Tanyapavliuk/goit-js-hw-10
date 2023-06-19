@@ -14,11 +14,12 @@ const refs = {
 }
 const textErroeEl = refs.loader.nextElementSibling;
 
-textErroeEl.classList.add("is-hidden");
-refs.loader.classList.add("is-hidden");
-
 
 fetchBreeds(); // виклик функції, що додає в select елементи option
+
+// if (fetchBreeds().promiseState === "pending") {
+//       refs.loader.classList.remove("is-hidden");
+// }
 
 // запит на масив об'єктів всіх порід
 // передирання та рендер розмітки до select
@@ -30,6 +31,10 @@ fetchBreeds().then(response => {
     refs.select.innerHTML = arrayOptions;
 
     const customSelect = new SlimSelect({ select: '#single' });
+
+    refs.loader.classList.add("is-hidden");
+    refs.select.classList.remove("is-hidden");
+    textErroeEl.classList.add("is-hidden");
     // response.forEach(element => { //другий метод рендеру
     // //    console.log(element)
     //    refs.select.insertAdjacentHTML("beforeend",
